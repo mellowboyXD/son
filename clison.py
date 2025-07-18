@@ -23,7 +23,6 @@ if __name__ == "__main__":
                 r.adjust_for_ambient_noise(mic)
                 audio = r.listen(mic)
                 try:
-                    # txt = r.recognize_sphinx(audio) if args.local else r.recognize_google(audio) # type: ignore
                     match args:
                         case [("local", True), ("whisper", False)]:
                             txt = r.recognize_sphinx(audio) # type: ignore
